@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero hero-intro">
+    <img src="{{ url_for('static', filename='Images/ME2.png') }}" alt="Norrapat" class="profile-image">
+    <div class="hero-text">
+        {% if lang == 'th' %}
+        <h1>สวัสดี ผมชื่อ นรภัทร</h1>
+        <p>ผมเป็นนักศึกษาสาขา CyberSecurity และ Data Science ที่มหาวิทยาลัยกรุงเทพ</p>
+        <p>ผมอาจจะขาดความมั่นใจเล็กน้อย แต่ผมกำลังพยายามพัฒนาตัวเอง</p>
+        <a class="button" href="{{ url_for('project') }}">โปรเจกต์ของผม</a>
+        {% else %}
+        <h1>Hello I am Norrapat</h1>
+        <p>I am a CyberSecurity & Data Science Student At Bangkok University</p>
+        <p>I'm kind of lack selfconfident But I'm trying to improve myself</p>
+        <a class="button" href="{{ url_for('project') }}">View My Projects</a>
+        {% endif %}
+    </div>
+</section>
+
+<section class="card-grid">
+    <article class="card">
+        <h2>Hard Skills</h2>
+        <p>Programming Languages : Python, SQL, Java, C#, C++, HTML</p>
+        <p>Tools : Visual Studio Code, Power BI, Visual Studio, SQLite, Arduino IDE, Google Colab, 
+            Blynk Cloud,kali linux,burp suite,microsoft azure,github,Davinci Resolve(beginner level)</p>
+        <p>Languages : Thai(native) English(Fluent)</p>
+    </article>
+    <article class="card">
+        {% if lang == 'th' %}
+        <h2>Soft Skills</h2>
+        <p>การสื่อสาร</p>
+        <p>การทำงานเป็นทีม</p>
+        <p>การแก้ปัญหา</p>
+        <p>ความเข้าใจในผู้อืน</p>
+        <p>ความละเอียดในการทำงาน</p>
+        {% else %}
+        <h2>Soft Skills</h2>
+        <p>Communication</p>
+        <p>Team Work</p>
+        <p>Problem Solving</p>
+        <p>Empathy</p>
+        <p>Attention to detail</p>
+        {% endif %}
+    </article>
+</section>
+{% endblock %}

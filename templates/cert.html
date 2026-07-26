@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-section">
+    {% if lang == 'th' %}
+    <h1>เกียรติบัตร</h1>
+    <p>นี่คือเกียรติบัตรและความสำเร็จบางส่วนที่ผมรวบรวมไว้</p>
+    {% else %}
+    <h1>Certifications</h1>
+    <p>Here are some of the certifications and achievements I have collected.</p>
+    {% endif %}
+
+    <div class="card-list">
+    {% for certificate in certificates %}
+    <article class="card-project">
+
+        <embed
+            class="cert-preview"
+            src="{{ url_for('static', filename=certificate.image) }}"
+            type="application/pdf"
+            alt="{{ certificate.title }}">
+
+        <div class="card-content">
+            <h2>{{ certificate.title }}</h2>
+            {% if lang == 'th' %}
+            <p>{{ certificate.description_th }}</p>
+            {% else %}
+            <p>{{ certificate.description }}</p>
+            {% endif %}
+        </div>
+
+    </article>
+    {% endfor %}
+</div>
+</section>
+
+{% endblock %}

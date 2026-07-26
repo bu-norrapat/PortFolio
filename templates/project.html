@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-section">
+    {% if lang == 'th' %}
+    <h1>โปรเจกต์</h1>
+    <p>นี่คือโปรเจกต์ที่สะท้อนทักษะและประสบการณ์ของผม</p>
+    {% else %}
+    <h1>Projects</h1>
+    <p>Here are a few projects that reflect my growing skills.</p>
+    {% endif %}
+
+    <div class="card-list">
+    {% for project in projects %}
+    <article class="card-project">
+
+        <img
+            src="{{ url_for('static', filename=project.image) }}"
+            alt="{{ project.title }}">
+
+        <div class="card-content">
+            <h2>{{ project.title }}</h2>
+            {% if lang == 'th' %}
+            <p>{{ project.description_th }}</p>
+            <p>{{ project.whatilearn_th }}</p>
+            <p>{{ project.about_th }}</p>
+            {% else %}
+            <p>{{ project.description }}</p>
+            <p>{{ project.whatilearn }}</p>
+            <p>{{ project.about }}</p>
+            {% endif %}
+            <p>
+                <a class="button" href="{{ project.link | default('put link here') }}" target="_blank" rel="noopener">Link</a>
+            </p>
+        </div>
+
+    </article>
+    {% endfor %}
+</div>
+</section>
+
+{% endblock %}

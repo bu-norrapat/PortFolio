@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-section">
+    {% if lang == 'th' %}
+    <h1>กิจกรรม</h1>
+    <p>กิจกรรมล่าสุด</p>
+    {% else %}
+    <h1>Activity</h1>
+    <p>Recent activities</p>
+    {% endif %}
+
+    <div class="card-list">
+        {% for activity in activities %}
+        <article class="card-project">
+
+        <img
+            src="{{ url_for('static', filename=activity.image) }}"
+            alt="{{ activity.title }}">
+
+        <div class="card-content">
+            <h2>{{ activity.title }}</h2>
+            {% if lang == 'th' %}
+            <p>{{ activity.description_th }}</p>
+            <p>{{ activity.description_detail_th }}</p>
+            {% else %}
+            <p>{{ activity.description }}</p>
+            <p>{{ activity.description_detail }}</p>
+            {% endif %}
+        </div>
+
+    </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
