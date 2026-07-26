@@ -21,7 +21,7 @@ def project():
     projects = [
         {
             'title': 'A Simple shop app',
-            'image' : 'Images/dota 2 shop.png',
+            'image' : 'Images/dota2shop.png',
             'link': 'https://github.com/bu-norrapat/dota2shop.git',
             'description': 'Description : As a First year Student this is my very first Project',
             'whatilearn': 'What I learn : basic Python,SQL,VScode',
