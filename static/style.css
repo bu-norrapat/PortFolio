@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 32px;
+    padding: 20px 32px;
     border-bottom: 1px solid #e5e5e5;
     background-color: #fff;
     position: sticky;
